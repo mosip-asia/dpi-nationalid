@@ -1,0 +1,29 @@
+# Git ignore for dpi-nationalid
+.DS_Store
+*.swp
+*.bak
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.env
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Helm
+*.tgz
+.helm/
+
+# Credentials & local secrets
+*.tfvars
+*.pem
+*.key
+credentials/
+secrets/

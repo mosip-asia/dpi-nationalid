@@ -1,0 +1,9 @@
+apiVersion: v2
+name: ait-nationalid
+description: DOPA National ID Credential Issuer (Inji Certify) & Identity Bridge
+type: application
+version: 0.1.0
+appVersion: "0.21.0"
+maintainers:
+  - name: MOSIP Asia DPI Team
+    email: dpi-core@ait.ac.th

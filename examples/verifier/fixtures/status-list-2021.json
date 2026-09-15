@@ -1,0 +1,19 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://w3id.org/vc/status-list/2021/v1"
+  ],
+  "id": "https://vdr.trust.dpi.ait.ac.th/status/status-list-2021.json",
+  "type": [
+    "VerifiableCredential",
+    "StatusList2021Credential"
+  ],
+  "issuer": "did:web:vdr.trust.dpi.ait.ac.th:issuers:dopa",
+  "issuanceDate": "2026-09-15T00:00:00Z",
+  "credentialSubject": {
+    "id": "https://vdr.trust.dpi.ait.ac.th/status/status-list-2021.json#list",
+    "type": "StatusList2021",
+    "statusPurpose": "revocation",
+    "encodedList": "H4sIAE0aqWoC/2NgAAIWhlEwCkbBKBgFo2AUjCAAAJpg8TIACAAA"
+  }
+}

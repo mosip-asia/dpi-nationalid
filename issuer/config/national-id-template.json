@@ -1,0 +1,58 @@
+{
+  "credentialTemplateId": "ThaiNationalIDCredential",
+  "name": "Thai National Identity Card",
+  "issuer": "did:web:vdr.trust.dpi.ait.ac.th:issuers:dopa",
+  "schema": "https://vdr.trust.dpi.ait.ac.th/schemas/thailand/national-id.jsonld",
+  "format": "ldp_vc",
+  "type": [
+    "VerifiableCredential",
+    "ThaiNationalIDCredential"
+  ],
+  "claims": {
+    "nationalId": {
+      "path": "$.userinfo.individual_id",
+      "mandatory": true
+    },
+    "titleTh": {
+      "path": "$.userinfo.title_th",
+      "mandatory": true
+    },
+    "firstNameTh": {
+      "path": "$.userinfo.name_th",
+      "mandatory": true
+    },
+    "lastNameTh": {
+      "path": "$.userinfo.family_name_th",
+      "mandatory": true
+    },
+    "titleEn": {
+      "path": "$.userinfo.title_en",
+      "mandatory": false
+    },
+    "firstNameEn": {
+      "path": "$.userinfo.name_en",
+      "mandatory": false
+    },
+    "lastNameEn": {
+      "path": "$.userinfo.family_name_en",
+      "mandatory": false
+    },
+    "dateOfBirth": {
+      "path": "$.userinfo.birthdate",
+      "mandatory": true
+    },
+    "gender": {
+      "path": "$.userinfo.gender",
+      "mandatory": true
+    },
+    "address": {
+      "path": "$.userinfo.address_line1",
+      "mandatory": true
+    }
+  },
+  "validityPeriodDays": 3650,
+  "statusList": {
+    "type": "StatusList2021",
+    "registryUrl": "https://vdr.trust.dpi.ait.ac.th/status/status-list-2021.json"
+  }
+}

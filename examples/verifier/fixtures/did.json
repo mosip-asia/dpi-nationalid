@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/ed25519-2020/v1"
+  ],
+  "id": "did:web:vdr.trust.dpi.ait.ac.th:issuers:dopa",
+  "verificationMethod": [
+    {
+      "id": "did:web:vdr.trust.dpi.ait.ac.th:issuers:dopa#key-1",
+      "type": "Ed25519VerificationKey2020",
+      "controller": "did:web:vdr.trust.dpi.ait.ac.th:issuers:dopa",
+      "publicKeyMultibase": "z6Mks7L6i32v45zP1CjQyC8Jk2TfUvH1gX8vR2w4x8Y="
+    }
+  ],
+  "assertionMethod": [
+    "did:web:vdr.trust.dpi.ait.ac.th:issuers:dopa#key-1"
+  ],
+  "authentication": [
+    "did:web:vdr.trust.dpi.ait.ac.th:issuers:dopa#key-1"
+  ]
+}

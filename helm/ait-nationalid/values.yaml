@@ -1,0 +1,33 @@
+global:
+  domain: "dpi.ait.ac.th"
+
+image:
+  repository: "ghcr.io/mosip/inji-certify"
+  tag: "0.21.0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  host: "issuer.id.dpi.ait.ac.th"
+
+resources:
+  limits:
+    cpu: 1000m
+    memory: 1024Mi
+  requests:
+    cpu: 250m
+    memory: 512Mi
+
+env:
+  SPRING_PROFILES_ACTIVE: "dopa,production"
+  TRUST_VDR_BASE_URL: "https://vdr.trust.dpi.ait.ac.th"
+  TRUST_REGISTRY_BASE_URL: "https://registry.trust.dpi.ait.ac.th"
+  MOSIP_ESIGNET_BASE_URL: "https://login.id.dpi.ait.ac.th"

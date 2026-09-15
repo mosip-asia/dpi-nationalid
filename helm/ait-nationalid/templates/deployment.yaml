@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ait-nationalid-certify
+  labels:
+    app.kubernetes.io/name: ait-nationalid
+    app.kubernetes.io/component: issuer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: ait-nationalid
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: ait-nationalid
+    spec:
+      containers:
+        - name: certify
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+              name: http
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "{{ .Values.env.SPRING_PROFILES_ACTIVE }}"
+            - name: TRUST_VDR_BASE_URL
+              value: "{{ .Values.env.TRUST_VDR_BASE_URL }}"
+            - name: TRUST_REGISTRY_BASE_URL
+              value: "{{ .Values.env.TRUST_REGISTRY_BASE_URL }}"
+            - name: MOSIP_ESIGNET_BASE_URL
+              value: "{{ .Values.env.MOSIP_ESIGNET_BASE_URL }}"
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: http
+            initialDelaySeconds: 45
+            periodSeconds: 15

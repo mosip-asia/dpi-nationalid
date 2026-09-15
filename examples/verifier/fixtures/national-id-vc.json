@@ -1,0 +1,42 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://vdr.trust.dpi.ait.ac.th/schemas/thailand/national-id.jsonld"
+  ],
+  "id": "urn:uuid:7f3b890a-5c21-4d3b-9e41-610d8a6e42b1",
+  "type": [
+    "VerifiableCredential",
+    "ThaiNationalIDCredential"
+  ],
+  "issuer": "did:web:vdr.trust.dpi.ait.ac.th:issuers:dopa",
+  "issuanceDate": "2026-09-15T08:00:00Z",
+  "expirationDate": "2034-09-15T08:00:00Z",
+  "credentialSubject": {
+    "id": "did:key:z6MkuV8sD6i95RzQ1CjQyC8Jk2TfUvH1gX8vR2w4x8YFGHJ",
+    "nationalId": "1-1004-99999-99-1",
+    "titleTh": "นาย",
+    "firstNameTh": "สมชาย",
+    "lastNameTh": "ใจดี",
+    "titleEn": "Mr.",
+    "firstNameEn": "Somchai",
+    "lastNameEn": "Jaidee",
+    "dateOfBirth": "1995-05-12",
+    "gender": "male",
+    "address": "99/1 หมู่ 4 ตำบลคลองหนึ่ง อำเภอคลองหลวง จังหวัดปทุมธานี 12120",
+    "religion": "Buddhism"
+  },
+  "credentialStatus": {
+    "id": "https://vdr.trust.dpi.ait.ac.th/status/status-list-2021.json#100",
+    "type": "StatusList2021Entry",
+    "statusPurpose": "revocation",
+    "statusListIndex": "100",
+    "statusListCredential": "https://vdr.trust.dpi.ait.ac.th/status/status-list-2021.json"
+  },
+  "proof": {
+    "type": "Ed25519Signature2020",
+    "created": "2026-09-15T08:05:00Z",
+    "verificationMethod": "did:web:vdr.trust.dpi.ait.ac.th:issuers:dopa#key-1",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "z3A5pY9K4f...mock-cryptographic-signature...B7uL"
+  }
+}
